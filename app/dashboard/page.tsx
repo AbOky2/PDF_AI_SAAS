@@ -1,3 +1,4 @@
+import Documents from '@/components/Documents';
 import React from 'react'
 
 export const dynamic = "force-dynamic";
@@ -7,6 +8,8 @@ function Dashboard() {
       <h1 className='text-3xl p-5 bg-gray-100 font-extralight text-indigo-600'>
         My Documents
       </h1>
+
+      <Documents/>
     </div>
   )
 }
