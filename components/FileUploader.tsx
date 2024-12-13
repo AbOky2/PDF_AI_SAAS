@@ -1,12 +1,12 @@
 "use client";
-import React, { useCallback } from 'react'
+import React from 'react'
 import {useDropzone} from 'react-dropzone'
-import { CheckCircleIcon, CircleArrowDown, HammerIcon, RocketIcon, SaveIcon } from 'lucide-react';
+import { CircleArrowDown, RocketIcon, } from 'lucide-react';
 function FileUploader() {
-    const onDrop = useCallback((acceptedFiles : File[]) => {
-        // Do something with the files
-      }, []);
-      const {getRootProps, getInputProps, isDragActive, isFocused} = useDropzone({onDrop})
+    // const onDrop = useCallback((acceptedFiles : File[]) => {
+    //     // Do something with the files
+    //   }, []);
+      const {getRootProps, getInputProps, isDragActive, isFocused} = useDropzone({})
     
   return (
     <div className='flex flex-col gap-4 items-center max-w-7xl mx-auto'>
@@ -25,7 +25,7 @@ function FileUploader() {
             ) :(
                 <>
                 <CircleArrowDown className='h-20 w-20 animate-bounce'/>
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p>Drag and drop some files here, or click to select files</p>
                 </>
             )
         }
