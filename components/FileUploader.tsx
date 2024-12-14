@@ -15,6 +15,7 @@ function FileUploader() {
             router.push(`/dashboard/files/${fileId}`)
         }
     }, [fileId, router])
+    
     const onDrop = useCallback(async(acceptedFiles : File[]) => {
         // Do something with the files
         const file = acceptedFiles[0];
