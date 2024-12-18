@@ -2,11 +2,11 @@
 import { JSX, useCallback, useEffect } from 'react'
 import {useDropzone} from 'react-dropzone'
 import { CheckCircleIcon, CircleArrowDown, HammerIcon, RocketIcon, SaveIcon } from 'lucide-react';
-import useUpload, { StatutText } from '@/hooks/useUpload';
+import useUpload, { StatusText } from '@/hooks/useUpload';
 import { useRouter } from 'next/navigation';
 function FileUploader() {
 
-    const {progress, statut, fileId, handleUpload} = useUpload();
+    const {progress, status, fileId, handleUpload} = useUpload();
 
     const router = useRouter();
 
@@ -15,7 +15,7 @@ function FileUploader() {
             router.push(`/dashboard/files/${fileId}`)
         }
     }, [fileId, router])
-    
+
     const onDrop = useCallback(async(acceptedFiles : File[]) => {
         // Do something with the files
         const file = acceptedFiles[0];
@@ -26,19 +26,19 @@ function FileUploader() {
             //do nothing...
             //toast...
         }
-      }, []);
+      }, [handleUpload]);
 
       const statusIcon : {
-        [key in StatutText]:JSX.Element;
+        [key in StatusText]:JSX.Element;
       } = {
-        [StatutText.UPLOADING] : (
+        [StatusText.UPLOADING] : (
             <RocketIcon className='h-20 w-20 text-indigo-600'/>
         ),
-        [StatutText.UPLOADED] : (
+        [StatusText.UPLOADED] : (
             <CheckCircleIcon className='h-20 w-20 text-indigo-600'/>
         ),
-        [StatutText.SAVING] : <SaveIcon className='h-20 w-20 text-indigo-600'/>,
-        [StatutText.GENERATING] : (
+        [StatusText.SAVING] : <SaveIcon className='h-20 w-20 text-indigo-600'/>,
+        [StatusText.GENERATING] : (
             <HammerIcon className='h-20 w-20 text-indigo-600'/>
         ),
       }
@@ -59,9 +59,7 @@ function FileUploader() {
     <div className='flex flex-col gap-4 items-center max-w-7xl mx-auto'>
         {uploadInProgress && (
             <div className='mt-32 flex flex-col justify-center items-center gap-5'>
-                <div className={`radial-progress bg-indigo-300 text-white border-indigo-600 border-4 ${
-                    progress===100 && 'hidden'
-                }`}
+                <div className={`radial-progress bg-indigo-300 text-white border-indigo-600 border-4 ${progress===100 && 'hidden'}`}
                 role='progressbar'
                 style={{
                     //@ts-ignore
@@ -70,14 +68,14 @@ function FileUploader() {
                     "--thickness" : "1.3rem",
                 }}
                 >
-                    {progress}%
+                    {progress} %
                 </div>
                 {
                     //@ts-ignore
-                    statusIcon[statut!]
+                    statusIcon[status!]
                 }
                 {/* @ts-ignore*/}
-                <p className=' text-indigo-600 animate-pulse'>{statut}</p>
+                <p className=' text-indigo-600 animate-pulse'>{status}</p>
             </div>
         )}
 

@@ -8,13 +8,13 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import {v4 as uuidv4} from "uuid";
 
-export enum StatutText {
+export enum StatusText {
     UPLOADING = "Uploading file...",
     UPLOADED  = "File Uploaded successfully",
     SAVING = "Saving file to database...",
     GENERATING = "Generating AI Embeddings, This will only take a few seconds...",
 }
-export type Status = StatutText[keyof StatutText];
+export type Status = StatusText[keyof StatusText];
 
 function useUpload() {
   const [progress, setProgress] = useState<number|null>(null);
@@ -37,17 +37,17 @@ function useUpload() {
         const percent = Math.round(
             (snapshot.bytesTransferred/snapshot.totalBytes)*100
         );
-        setStatus(StatutText.UPLOADING);
+        setStatus(StatusText.UPLOADING);
         setProgress(percent);
     }, (error) =>{
         console.error("error while uploading file", error);
     },
     async() =>{
-        setStatus(StatutText.UPLOADED);
+        setStatus(StatusText.UPLOADED);
 
         const downloadUrl = await getDownloadURL(uploadTask.snapshot.ref);
 
-        setStatus(StatutText.SAVING);
+        setStatus(StatusText.SAVING);
         await setDoc(doc(db, "users", user.id, 'files', fileIdToUploadTo), {
             name : file.name,
             size : file.size,
@@ -56,7 +56,7 @@ function useUpload() {
             ref : uploadTask.snapshot.ref.fullPath,
             createAt : new Date(),
         })
-        setStatus(StatutText.GENERATING);
+        setStatus(StatusText.GENERATING);
         //Generate AI Embdeddings ...
         await generateEmbeddings(fileIdToUploadTo);
         setFileId(fileIdToUploadTo);
