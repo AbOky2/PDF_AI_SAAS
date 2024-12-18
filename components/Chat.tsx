@@ -44,7 +44,7 @@ function Chat({id} : {id : string}) {
 
         //get second last message to check if the AI is thinking...
         const lastMessage = messages.pop();
-        if(lastMessage?.role=== "ai" && lastMessage.message==="thinking ..." ){
+        if(lastMessage?.role=== "ai" && lastMessage.message==="Thinking..." ){
             //return as this is a dummy placeholder message
             return ;
         }
@@ -78,7 +78,7 @@ function Chat({id} : {id : string}) {
             },
             {
                 role : "ai",
-                message : "Thinking ...",
+                message : "Thinking...",
                 createAt : new Date(),
             }
         ]);
@@ -104,14 +104,14 @@ function Chat({id} : {id : string}) {
   return (
     <div className='flex flex-col h-full overflow-scroll'>
         {/*Chat contet*/}
-      <div className='flex-1 w-full'>
+      <div className='flex-1 w-full '>
         {/*Chat message*/}
         {loading?(
             <div className='flex items-center justify-center'>
                 <Loader2Icon className='animate-spin h-20 w-20 mt-20 text-indigo-600'/>
             </div>
         ) : (
-            <div>
+            <div className='p-5'>
                 {messages.length === 0 && (
                     <ChatMessage
                     key = {"placeholder"}
