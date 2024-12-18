@@ -8,6 +8,7 @@ import {collection, orderBy, query} from "firebase/firestore";
 import { db } from '@/firebase';
 import { Loader2Icon } from 'lucide-react';
 import { askQuestion } from '@/actions/askQuestion';
+import ChatMessage from './ChatMessage';
 
 export type Message = {
     id?: string;
@@ -112,10 +113,10 @@ function Chat({id} : {id : string}) {
         ) : (
             <div>
                 {messages.length === 0 && (
-                    <ChatMessage 
+                    <ChatMessage
                     key = {"placeholder"}
                     message ={{
-                        role : "AI",
+                        role : "ai",
                         message : "Ask me anything about the document!",
                         createAt : new Date(),
                     }}/>
