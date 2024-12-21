@@ -24,7 +24,7 @@ function PricingPage () {
     const handleUpgrade = () =>{
         if(!user)return;
         const userDetails : UserDetails = {
-            email : user.primaryEmailAddress?.toString()!,
+            email : user.primaryEmailAddress?.toString() || '',
             name : user.fullName!,
         };
         startTransition(async() =>{
