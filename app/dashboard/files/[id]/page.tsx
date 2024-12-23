@@ -4,9 +4,11 @@ import PdfView from "@/components/PdfView";
 import { adminDb } from "@/firebaseAdmin";
 import { auth } from "@clerk/nextjs/server";
 
-//@ts-ignore
-async function ChatToFilePage({ params }: { params: { id: string } }) {
-  const { id } = params; // On récupère id après résolution de params
+
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function ChatToFilePage(props: any) {
+  const { id } = props.params; // On récupère id après résolution de params
 
   // Protéger l'accès
   auth.protect();
