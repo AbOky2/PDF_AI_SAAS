@@ -1,7 +1,6 @@
 import React from 'react'
 import PlaceholderDocument from './PlaceholderDocument'
 import { auth } from '@clerk/nextjs/server'
-import { useAuth } from '@clerk/nextjs';
 import { adminDb } from '@/firebaseAdmin';
 import Document from './Document';
 

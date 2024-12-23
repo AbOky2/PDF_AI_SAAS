@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { Button } from './ui/button'
-import { Frown, FrownIcon, PlusCircleIcon } from 'lucide-react'
+import { FrownIcon, PlusCircleIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import useSubscription from '@/hooks/useSubscription'
 

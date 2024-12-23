@@ -1,11 +1,11 @@
 "use client"
-import { generateEmbeddings } from '@/actions/GenerateEmbeddings';
+import { generateEmbeddings } from '@/actions/generateEmbeddings';
 import { db, storage } from '@/firebase';
 import { useUser } from '@clerk/nextjs';
 import { doc, setDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+//import { useRouter } from 'next/navigation';
+import { useState } from 'react'
 import {v4 as uuidv4} from "uuid";
 
 export enum StatusText {
@@ -21,7 +21,7 @@ function useUpload() {
   const[fileId, setFileId] = useState<string|null>(null);
   const[status, setStatus] = useState<Status|null>(null);
   const {user} = useUser();
-  const router = useRouter();
+  //const router = useRouter();
 
   const handleUpload = async(file : File) =>{
     if(!file || !user) return;

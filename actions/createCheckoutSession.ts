@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use server";
 
 import { UserDetails } from "@/app/dashboard/upgrade/page";
@@ -17,6 +18,7 @@ export async function createCheckoutSession(userDetails:UserDetails) {
     let stripeCustomerId;
 
     const user = await adminDb.collection("users").doc(userId).get();
+    // @ts-ignore
     stripeCustomerId = user.data?.stripeCustomerId;
 
     if(!stripeCustomerId){

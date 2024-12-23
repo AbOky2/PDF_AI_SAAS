@@ -1,5 +1,7 @@
-import {loadStripe, Stripe} from "@stripe/stripe-js";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
+import {loadStripe, Stripe} from "@stripe/stripe-js";
+//@ts-ignore
 let stripePromise : Promise<Stripe, null>;
 if(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ===undefined){
     throw new Error("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set");

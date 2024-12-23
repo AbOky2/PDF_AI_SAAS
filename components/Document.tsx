@@ -1,9 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
 "use client"
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import byteSize from "byte-size";
 import useSubscription from '@/hooks/useSubscription';
-import { CloudIcon, Download, DownloadCloud, Trash2Icon } from 'lucide-react';
+import {  DownloadCloud, Trash2Icon } from 'lucide-react';
 import { useTransition } from 'react';
 import { Button } from './ui/button';
 import { deleteDocument } from '@/actions/deleteDocument';

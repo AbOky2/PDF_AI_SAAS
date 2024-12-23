@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import { JSX, useCallback, useEffect } from 'react'
 import {useDropzone} from 'react-dropzone'
