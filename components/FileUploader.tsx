@@ -4,9 +4,12 @@ import {useDropzone} from 'react-dropzone'
 import { CheckCircleIcon, CircleArrowDown, HammerIcon, RocketIcon, SaveIcon } from 'lucide-react';
 import useUpload, { StatusText } from '@/hooks/useUpload';
 import { useRouter } from 'next/navigation';
+import useSubscription from '@/hooks/useSubscription';
+import { toast } from '@/hooks/use-toast';
 function FileUploader() {
 
     const {progress, status, fileId, handleUpload} = useUpload();
+    const {isOverFileLimite, filesLoading} = useSubscription();
 
     const router = useRouter();
 
@@ -20,7 +23,16 @@ function FileUploader() {
         // Do something with the files
         const file = acceptedFiles[0];
         if(file){
-            await handleUpload(file);
+            if(!isOverFileLimite && !filesLoading){
+                await handleUpload(file);
+
+            }else{
+                toast({
+                    variant  :"destructive",
+                    title : "File Limit Reached",
+                    description : "You have reached the maximum number of files you can upload. Please Upgrade to add more documents",
+                })
+            }
         }
         else{
             //do nothing...
