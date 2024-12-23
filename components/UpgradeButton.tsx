@@ -22,9 +22,9 @@ function UpgradeButton() {
 
     if(!hasActiveMembership && !loading)
         return(
-            <Button asChild variant="default" className='bg-indigo-600'>
+            <Button asChild variant="default" className='bg-green-600'>
                 <Link href='/dashboard/upgrade'>
-                        <StarIcon className='ml-3 fill-indigo-600 text-white'/>
+                        <StarIcon className='ml-3 fill-green-600 text-white'/>
                         Upgrade
                 </Link>
             </Button>);
@@ -32,7 +32,7 @@ function UpgradeButton() {
     
     if(loading)
         return(
-            <Button variant="default" className='bg-indigo-600'>
+            <Button variant="default" className='bg-green-600'>
                 <Loader2Icon className='animate-spin'/>
                 Loading
             </Button>);
@@ -43,7 +43,7 @@ function UpgradeButton() {
     onClick={handleAccount}
     disabled={isPending}
     variant="default"
-    className='bg-indigo-600 border-indigo-600'
+    className='bg-green-600 border-green-600'
     >
         {isPending ? (
             <Loader2Icon className='animate-spin'/>

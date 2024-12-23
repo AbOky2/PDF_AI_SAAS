@@ -115,7 +115,7 @@ function Chat({id} : {id : string}) {
         {/*Chat message*/}
         {loading?(
             <div className='flex items-center justify-center'>
-                <Loader2Icon className='animate-spin h-20 w-20 mt-20 text-indigo-600'/>
+                <Loader2Icon className='animate-spin h-20 w-20 mt-20 text-green-600'/>
             </div>
         ) : (
             <div className='p-5'>
@@ -140,7 +140,7 @@ function Chat({id} : {id : string}) {
         
 
       </div>
-      <form className=' sticky flex bottom-0 space-x-2 p-5 bg-indigo-600/75' onSubmit={handleSubmit} action="">
+      <form className=' sticky flex bottom-0 space-x-2 p-5 bg-green-600/75' onSubmit={handleSubmit} action="">
         <Input
         placeholder='Ask a Question ...'
         value={input}
@@ -151,7 +151,7 @@ function Chat({id} : {id : string}) {
         type="submit"
          >
             {isPending?(
-                <Loader2Icon className='animate-spin text-indigo-600'/>
+                <Loader2Icon className='animate-spin text-green-600'/>
             ) : 
             ("Ask")
         }

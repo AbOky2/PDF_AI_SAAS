@@ -47,7 +47,7 @@ function PricingPage () {
     <div>
         <div className='py-24 sm:py-32'>
             <div className='max-w-4xl mx-auto text-center'>
-                <h2 className='text-base font-semibold leading-7 text-indigo-600'>
+                <h2 className='text-base font-semibold leading-7 text-green-600'>
                     Pricing 
                 </h2>
                 <p className='mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
@@ -74,15 +74,15 @@ function PricingPage () {
 
                     <ul role='list' className='mt-8 space-y-3 leading-6 text-sm text-gray-600'>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 2 Documents
                         </li>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Up to 3 messages per document
                         </li>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Try out the AI Chat Functionality
                         </li>
 
@@ -91,8 +91,8 @@ function PricingPage () {
                 </div>
 
                 {/*PRO*/}
-                <div className='ring-2 ring-indigo-600 p-8  rounded-3xl'>
-                <h3 className='text-lg font-semibold leading-8 text-indigo-600'>
+                <div className='ring-2 ring-green-600 p-8  rounded-3xl'>
+                <h3 className='text-lg font-semibold leading-8 text-green-600'>
                         Pro Plan
                     </h3>
                     <p className='mt-4 text-sm leading-6 text-gray-600'>
@@ -107,9 +107,9 @@ function PricingPage () {
                             / mois  
                         </span>
                     </p>
-                    <Button className='bg-indigo-600 w-full text-white shadow-sm hover:bg-indigo-500 mt-6 block rounded-md
+                    <Button className='bg-green-600 w-full text-white shadow-sm hover:bg-green-500 mt-6 block rounded-md
                     px-3 py-2 font-semibold text-center text-sm leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-                     focus-visible:outline-indigo-600'
+                     focus-visible:outline-green-600'
                      disabled = {loading || isPending}
                      onClick={handleUpgrade}
                      >
@@ -118,29 +118,29 @@ function PricingPage () {
 
                     <ul role='list' className='mt-8 space-y-3 leading-6 text-sm text-gray-600'>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Store upto 20 Documents 
                         </li>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Ability to Delete Documents
                         </li>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Upto 100 messages per document
                         </li>
 
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Full Power AI Chat Functionality with Memory Recall
                         </li>
 
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 Advanced analytics
                         </li>
                         <li className='flex gap-x-3'>
-                                <CheckIcon className='h-6 w-5 flex-none text-indigo-600'/>
+                                <CheckIcon className='h-6 w-5 flex-none text-green-600'/>
                                 24-hour support response time
                         </li>
 

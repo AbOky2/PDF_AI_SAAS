@@ -104,7 +104,7 @@ function PdfView({url} : {url : string}) {
         </div>
 
         {!file ? (
-            <Loader2Icon className='animate-spin w-20 h-20 text-indigo-600 mt-20'/> 
+            <Loader2Icon className='animate-spin w-20 h-20 text-green-600 mt-20'/> 
         ) :(
                 <Document
                 loading = {null}

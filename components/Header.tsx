@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className='flex justify-between bg-white shadow-sm p-5 border-b'>
       <Link href='/dashboard' className='text-2xl'>
-      Chat to <span className='text-indigo-600'>PDF</span>
+      Chat to <span className='text-green-600'>PDF</span>
       </Link>
 
       <SignedIn>
@@ -23,9 +23,9 @@ function Header() {
                 <Link href='/dashboard'>My Documents</Link>
             </Button>
 
-            <Button asChild variant="outline" className='border-indigo-600'>
+            <Button asChild variant="outline" className='border-green-600'>
                 <Link href='/dashboard/upload'>
-                    <FilePlus2 className='text-indigo-600'/>
+                    <FilePlus2 className='text-green-600'/>
                 </Link>
             </Button>
 
