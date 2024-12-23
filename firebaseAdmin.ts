@@ -4,12 +4,17 @@ import { getFirestore } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 
 import { ServiceAccount } from "firebase-admin";
-import service_key from '@/service_key.json';
+
+const serviceAccount: ServiceAccount = {
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  };
 
 let app : App;
 if (getApps().length===0){
     app = initializeApp({
-        credential : cert(service_key as ServiceAccount),
+        credential : cert(serviceAccount),
     });
 }
 else{
