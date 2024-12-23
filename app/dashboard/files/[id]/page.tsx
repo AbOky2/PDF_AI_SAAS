@@ -1,12 +1,16 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Chat from "@/components/Chat";
 import PdfView from "@/components/PdfView";
 import { adminDb } from "@/firebaseAdmin";
 import { auth } from "@clerk/nextjs/server";
 
-//@ts-ignore
-async function ChatToFilePage({ params }: { params: { id: string } }) {
-  const { id } = params; // On récupère id après résolution de params
+interface PageProps {
+    params: {
+      id: string;
+    };
+  }
+  
+  async function ChatToFilePage({ params }: PageProps) {
+    const { id } = params;  // On récupère id après résolution de params
 
   // Protéger l'accès
   auth.protect();
